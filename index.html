@@ -6,11 +6,12 @@
     <style>
       /* Styles for the CV layout */
       body {
-        font-family: sans-serif;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 14px;
         line-height: 1.4;
         margin: 0;
         padding: 0;
+        background-color: #f2f2f2;
       }
       header {
         background-color: #333;
@@ -19,13 +20,19 @@
       }
       h1 {
         margin: 0;
-        font-size: 24px;
+        font-size: 32px;
       }
       h2 {
-        font-size: 18px;
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 15px;
       }
       section {
-        margin: 20px;
+        margin: 30px;
+        padding: 30px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
       }
       ul {
         list-style: none;
@@ -33,10 +40,15 @@
         padding: 0;
       }
       li {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
       }
       .section-title {
         margin-top: 0;
+      }
+      .date {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 10px;
       }
     </style>
   </head>
@@ -47,10 +59,10 @@
     <section>
       <h2>Personal Information</h2>
       <ul>
-        <li>Name: John Doe</li>
-        <li>Email: john.doe@example.com</li>
-        <li>Phone: 555-555-5555</li>
-        <li>Address: 123 Main St, Anytown USA</li>
+        <li><strong>Name:</strong> John Doe</li>
+        <li><strong>Email:</strong> john.doe@example.com</li>
+        <li><strong>Phone:</strong> 555-555-5555</li>
+        <li><strong>Address:</strong> 123 Main St, Anytown USA</li>
       </ul>
     </section>
     <section>
@@ -58,11 +70,11 @@
       <ul>
         <li>
           <h3 class="section-title">Bachelor of Science in Computer Science</h3>
-          <p>School Name, Graduation Date</p>
+          <p class="date">School Name, Graduation Date</p>
         </li>
         <li>
           <h3 class="section-title">Master of Science in Computer Science</h3>
-          <p>School Name, Graduation Date</p>
+          <p class="date">School Name, Graduation Date</p>
         </li>
       </ul>
     </section>
@@ -71,7 +83,7 @@
       <ul>
         <li>
           <h3 class="section-title">Software Engineer</h3>
-          <p>Company Name, Employment Dates</p>
+          <p class="date">Company Name, Employment Dates</p>
           <ul>
             <li>Developed software applications using Python and Java</li>
             <li>Collaborated with team members to design and implement software solutions</li>
@@ -80,12 +92,22 @@
         </li>
         <li>
           <h3 class="section-title">Web Developer</h3>
-          <p>Company Name, Employment Dates</p>
+          <p class="date">Company Name, Employment Dates</p>
           <ul>
             <li>Designed and developed websites using HTML, CSS, and JavaScript</li>
-            <li>Collaborated with clients to understand project requirements and deliver websites that met their needs</li>
+            <li>Collaborated with designers to create visually appealing website layouts</li>
+            <li>Optimized websites for performance and search engine rankings</li>
           </ul>
         </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Programming languages: Python, Java, JavaScript, HTML, CSS</li>
+        <li>Frameworks and libraries: Django, React, jQuery, Bootstrap</li>
+        <li>Database systems: MySQL, MongoDB, PostgreSQL</li>
+        <li>Other tools and technologies: Git, Linux, AWS, Docker</li>
       </ul>
     </section>
   </body>
