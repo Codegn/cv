@@ -4,111 +4,307 @@
     <meta charset="utf-8">
     <title>Curriculum Vitae</title>
     <style>
-      /* Styles for the CV layout */
+      /* General styles */
       body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 14px;
         line-height: 1.4;
         margin: 0;
         padding: 0;
-        background-color: #f2f2f2;
+        background-color: #fff;
+        color: #333;
       }
-      header {
+      a {
+        color: #c0392b;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+        margin: 0 0 10px;
+      }
+      h1 {
+        font-size: 36px;
+        color: #c0392b;
+      }
+      h2 {
+        font-size: 24px;
+        color: #2980b9;
+      }
+      h3 {
+        font-size: 18px;
+        color: #333;
+      }
+      p {
+        margin: 0 0 10px;
+      }
+      ul, ol {
+        margin: 0 0 10px 20px;
+        padding: 0;
+      }
+      li {
+        margin: 0 0 10px;
+        padding: 0;
+      }
+      .section {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #f2f2f2;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+      .section h2 {
+        margin-top: 0;
+      }
+      .section p {
+        margin-bottom: 0;
+      }
+      .section ul, .section ol {
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+      .section li {
+        margin-bottom: 5px;
+        padding-left: 20px;
+        position: relative;
+      }
+      .section li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #c0392b;
+      }
+      
+      /* Header section */
+      .header {
         background-color: #333;
         color: #fff;
         padding: 20px;
       }
-      h1 {
+      .header h1 {
         margin: 0;
-        font-size: 32px;
+        font-size: 48px;
+        text-align: center;
+        letter-spacing: 2px;
       }
-      h2 {
-        font-size: 20px;
-        margin-top: 30px;
-        margin-bottom: 15px;
+      .header p {
+        margin-top: 10px;
+        font-size: 18px;
+        text-align: center;
       }
-      section {
-        margin: 30px;
-        padding: 30px;
-        background-color: #fff;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
+      
+      /* Personal info section */
+      .personal-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
-      ul {
+      .personal-info > div {
+        flex-basis: calc(33.33% - 20px);
+        margin-bottom: 20px;
+      }
+      .personal-info h2 {
+        font-size: 24px;
+        color: #c0392b;
+      }
+      .personal-info ul {
         list-style: none;
         margin: 0;
         padding: 0;
       }
-      li {
-        margin-bottom: 10px;
+      .personal-info li {
+        margin-bottom: 5px;
       }
-      .section-title {
-        margin-top: 0;
+      .personal-info span {
+        color: #2980b9;
       }
-      .date {
-        font-weight: bold;
-        color: #555;
-        margin-bottom: 10px;
+      
+      /* Education section */
+      .education {
+        margin-top: 40px;
+      }
+      .education h2 {
+        font-size: 24px;
+        color: #c0392b;
+      }
+      .education-item {
+        margin-bottom: 20px;
+      }
+      .education-item h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        color: #333;
+      }
+      .education-item p {
+        margin: 0;
+        font-size: 14px;
+      }
+      .education-item ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .education-item li {
+        margin-bottom: 5px;
+        position: relative;
+        padding-left: 20px;
+      }
+      .education-item li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #c0392b;
+      }
+      
+      /* Experience section */
+      .experience {
+        margin-top: 40px;
+      }
+      .experience h2 {
+        font-size: 24px;
+        color: #c0392b;
+      }
+      .experience-item {
+        margin-bottom: 20px;
+      }
+      .experience-item h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        color: #333;
+      }
+      .experience-item p {
+        margin: 0;
+        font-size: 14px;
+      }
+      .experience-item ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .experience-item li {
+        margin-bottom: 5px;
+        position: relative;
+        padding-left: 20px;
+      }
+      .experience-item li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #c0392b;
+      }
+      
+      /* Skills section */
+      .skills {
+        margin-top: 40px;
+      }
+      .skills h2 {
+        font-size: 24px;
+        color: #c0392b;
+      }
+      .skills ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .skills li {
+        margin-bottom: 5px;
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+      .skills li + li {
+        margin-left: 10px;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Curriculum Vitae</h1>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1>John Doe</h1>
+        <p>Web Developer</p>
+      </div>
     </header>
-    <section>
+  <!-- Personal Information section -->
+  <section class="personal">
+    <div class="container">
       <h2>Personal Information</h2>
       <ul>
-        <li><strong>Name:</strong> John Doe</li>
-        <li><strong>Email:</strong> john.doe@example.com</li>
-        <li><strong>Phone:</strong> 555-555-5555</li>
-        <li><strong>Address:</strong> 123 Main St, Anytown USA</li>
+        <li><strong>Email:</strong> john.doe@gmail.com</li>
+        <li><strong>Phone:</strong> (123) 456-7890</li>
+        <li><strong>Address:</strong> 123 Main St, Anytown USA 12345</li>
       </ul>
-    </section>
-    <section>
+    </div>
+  </section>
+
+  <!-- Education section -->
+  <section class="education">
+    <div class="container">
       <h2>Education</h2>
-      <ul>
-        <li>
-          <h3 class="section-title">Bachelor of Science in Computer Science</h3>
-          <p class="date">School Name, Graduation Date</p>
-        </li>
-        <li>
-          <h3 class="section-title">Master of Science in Computer Science</h3>
-          <p class="date">School Name, Graduation Date</p>
-        </li>
-      </ul>
-    </section>
-    <section>
-      <h2>Work Experience</h2>
-      <ul>
-        <li>
-          <h3 class="section-title">Software Engineer</h3>
-          <p class="date">Company Name, Employment Dates</p>
-          <ul>
-            <li>Developed software applications using Python and Java</li>
-            <li>Collaborated with team members to design and implement software solutions</li>
-            <li>Managed project timelines and delivered software on schedule</li>
-          </ul>
-        </li>
-        <li>
-          <h3 class="section-title">Web Developer</h3>
-          <p class="date">Company Name, Employment Dates</p>
-          <ul>
-            <li>Designed and developed websites using HTML, CSS, and JavaScript</li>
-            <li>Collaborated with designers to create visually appealing website layouts</li>
-            <li>Optimized websites for performance and search engine rankings</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    <section>
+      <div class="education-item">
+        <h3>Bachelor of Science in Computer Science</h3>
+        <p>University of XYZ, Anytown USA</p>
+        <ul>
+          <li>GPA: 3.8</li>
+          <li>Dean's List: all semesters</li>
+          <li>Relevant coursework: Data Structures, Algorithms, Web Development</li>
+        </ul>
+      </div>
+      <div class="education-item">
+        <h3>Associate of Science in Mathematics</h3>
+        <p>Community College of ABC, Anytown USA</p>
+        <ul>
+          <li>GPA: 3.9</li>
+          <li>Phi Theta Kappa Honor Society</li>
+          <li>Relevant coursework: Calculus, Linear Algebra, Discrete Mathematics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience section -->
+  <section class="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Web Developer</h3>
+        <p>ABC Company, Anytown USA</p>
+        <ul>
+          <li>Developed and maintained company website using HTML, CSS, and JavaScript</li>
+          <li>Collaborated with marketing team to implement SEO strategies and track website analytics</li>
+          <li>Managed web hosting and domain registration</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Software Developer Intern</h3>
+        <p>XYZ Corporation, Anytown USA</p>
+        <ul>
+          <li>Assisted senior developers in developing and testing software applications</li>
+          <li>Participated in code reviews and team meetings</li>
+          <li>Learned and utilized technologies such as Java, SQL, and AngularJS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills section -->
+  <section class="skills">
+    <div class="container">
       <h2>Skills</h2>
       <ul>
-        <li>Programming languages: Python, Java, JavaScript, HTML, CSS</li>
-        <li>Frameworks and libraries: Django, React, jQuery, Bootstrap</li>
-        <li>Database systems: MySQL, MongoDB, PostgreSQL</li>
-        <li>Other tools and technologies: Git, Linux, AWS, Docker</li>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>SQL</li>
+        <li>AngularJS</li>
       </ul>
-    </section>
+    </div>
+  </section>
   </body>
 </html>
